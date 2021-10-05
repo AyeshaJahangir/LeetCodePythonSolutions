@@ -1,0 +1,16 @@
+class Solution(object):
+    def uniqueMorseRepresentations(self, words):
+        """
+        :type words: List[str]
+        :rtype: int
+        """
+        morse=[".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+        t=set()
+        for index,word in enumerate(words):
+            transformed_word=""
+            for char in word:
+                transformed_word+=morse[ord(char)-97]
+            t.add(transformed_word)
+            
+        return len(t)
+            
