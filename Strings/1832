@@ -1,0 +1,14 @@
+class Solution(object):
+    def checkIfPangram(self, sentence):
+        """
+        :type sentence: str
+        :rtype: bool
+        """
+        alphabets=list(map(chr, range(97,123)))
+        sentence=list(set(list(sentence)))
+        sentence.sort()
+        if sentence==alphabets:
+            return True
+        else:
+            return False
+        
