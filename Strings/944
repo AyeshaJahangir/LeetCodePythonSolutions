@@ -1,0 +1,18 @@
+class Solution(object):
+    def minDeletionSize(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: int
+        """
+        count =0
+        length=len(strs[0])
+        for i in range(0,length):
+            #print i
+            for j in range(len(strs)-1):
+                if int(ord(strs[j][i]))>int(ord(strs[j+1][i])):                   
+                    count+=1
+                    break
+            
+        return count    
+                
+                
