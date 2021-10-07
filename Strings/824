@@ -1,0 +1,14 @@
+class Solution(object):
+    def toGoatLatin(self, sentence):
+        """
+        :type sentence: str
+        :rtype: str
+        """
+        sentence=sentence.split(" ")
+        result=""
+        for index,word in enumerate(sentence):
+            if lower(word[0]) in ('a','e','i','o','u'):
+                result+=word+"ma"+"a"*(index+1) + " "
+            else:
+                result+=word[1:]+word[0]+"ma"+"a"*(index+1) + " "
+        return strip(result)
