@@ -1,0 +1,20 @@
+class Solution(object):
+    def numberOfSteps(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        
+        if num==0:
+            return 0
+        if num%2==0:
+            num/=2
+            count=self.numberOfSteps(num)
+            return count+1
+        else:
+            num-=1
+            count=self.numberOfSteps(num)
+            return count+1
+        
+            
+        
